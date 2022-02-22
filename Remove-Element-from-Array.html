@@ -21,11 +21,12 @@
    */
 
   var removeElement = function (nums, val) {
-    if (!Array.isArray(nums) || typeof val !== "number") {
+    const newVal = Number(val);
+    if (!Array.isArray(nums) || isNaN(newVal)) {
       return "Enter a proper value";
     }
     for (let i = 0; i < nums.length; ) {
-      if (nums[i] === val) {
+      if (nums[i] === newVal) {
         nums.splice(i, 1);
       } else {
         i++;
